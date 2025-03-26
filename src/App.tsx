@@ -3,6 +3,23 @@ import eventData from "./data/data.json";
 import { RawEvent } from "./types";
 import { processEvents } from "./utils/eventProcessing";
 import "./Calendar.css";
+
+const HOURS = Array.from({ length: 13 }, (_, i) => i + 9);
+
+const HourMarkers = () => (
+  <>
+    {HOURS.map((hour) => (
+      <div
+        key={hour}
+        className="hour-line"
+        style={{ top: `${((hour - 9) / 12) * 100}vh` }}
+      >
+        <span className="hour-label">{hour}:00</span>
+      </div>
+    ))}
+  </>
+);
+
 const getEventTop = (minutes: number) => {
   return (minutes / 720) * 100;
 };
@@ -16,6 +33,7 @@ const App: React.FC = () => {
 
   return (
     <div className="calendar-container">
+      <HourMarkers />
       {events.map((event) => (
         <div
           key={event.id}
