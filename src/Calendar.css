@@ -1,0 +1,18 @@
+.calendar-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.event-card {
+  position: absolute;
+  font-size: 12px;
+  padding-left: 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #300000;
+  border-radius: 6px;
+  background-color: #f1b3b36b;
+}
